@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+header {
+  padding: 24px 30px 10px 30px;
+}
+
+header h2 {
+  margin: 0 0 6px 0;
+}
+
+header p {
+  margin: 0;
+  color: #64748b;
+}
+
+.search,
+input[type="search"] {
+  margin: 15px 0 10px 30px;
+  border-radius: 12px;
+  padding: 10px 16px;
+  border: 1.5px solid #cbd5e1;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: calc(100% - 60px);
+  max-width: 400px;
+}
+
+.search:focus,
+input[type="search"]:focus {
+  border-color: navy;
+  box-shadow: 0 0 0 3px rgba(0, 0, 128, 0.1);
+}
+
+.breed-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+  padding: 20px 30px 40px 30px;
+}
+
+.breed-card {
+  overflow: hidden;
+  background: white;
+  border-radius: 16px;
+  border: 1.5px solid navy;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.breed-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 128, 0.12);
+}
+
+.breed-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+.breed-info {
+  padding: 16px 20px 20px 20px;
+}
+
+.breed-info h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1.25rem;
+}
+
+.breed-info p {
+  margin: 0;
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.message {
+  margin-left: 30px;
+  font-size: 1.1rem;
+  color: #64748b;
+}
+
+@media (max-width: 900px) {
+  .breed-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .breed-grid {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+  
+  header, 
+  .search,
+  input[type="search"],
+  .message {
+    margin-left: 15px;
+  }
+
+  .search,
+  input[type="search"] {
+    width: calc(100% - 30px);
+  }
+}
